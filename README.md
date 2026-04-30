@@ -1,3 +1,7 @@
+## 🖥️ GUI Preview
+
+![GUI Screenshot](Screenshottt.png)
+
 🚚 Advanced Logistics Optimization System (ALOS)
 
 📌 Introduction
