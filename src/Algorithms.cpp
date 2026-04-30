@@ -3,6 +3,14 @@
 #include <queue>
 #include <climits>
 
+#include <fstream>
+#include <sstream>
+#include <iostream>
+
+using namespace std;
+
+vector<Order> orders;
+
 // Greedy
 vector<Order> selectOrders(vector<Order>& orders) {
     sort(orders.begin(), orders.end(), [](Order a, Order b) {
@@ -58,4 +66,37 @@ vector<int> dijkstra(int n, vector<vector<pair<int,int>>>& graph, int src) {
         }
     }
     return dist;
+}
+
+
+void loadOrders() {
+    orders.clear();
+    ifstream file("../data/orders.csv");
+    string line;
+
+    while(getline(file, line)) {
+        stringstream ss(line);
+        string val;
+        vector<int> data;
+
+        while(getline(ss, val, ',')) {
+            data.push_back(stoi(val));
+        }
+
+        orders.emplace_back(data[0], data[1], data[2], data[3]);
+    }
+
+    cout << "Orders Loaded: " << orders.size() << endl;
+}
+
+int optimize() {
+    auto sorted = selectOrders(orders);
+
+    vector<Order> chosen;
+    int capacity = 10;
+
+    int profit = knapsack(sorted, capacity, chosen);
+
+    cout << "Max Profit: " << profit << endl;
+    return profit;
 }

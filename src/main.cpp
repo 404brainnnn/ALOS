@@ -10,25 +10,7 @@ using namespace std;
 
 vector<Order> orders;
 
-void loadOrders() {
-    orders.clear();
-    ifstream file("../data/orders.csv");
-    string line;
 
-    while(getline(file, line)) {
-        stringstream ss(line);
-        string val;
-        vector<int> data;
-
-        while(getline(ss, val, ',')) {
-            data.push_back(stoi(val));
-        }
-
-        orders.emplace_back(data[0], data[1], data[2], data[3]);
-    }
-
-    cout << "Orders Loaded: " << orders.size() << endl;
-}
 
 void showOrders() {
     for(auto &o : orders) {
@@ -39,7 +21,7 @@ void showOrders() {
     }
 }
 
-void optimize() {
+int optimize() {
     auto sorted = selectOrders(orders);
 
     Vehicle v(10);
@@ -48,6 +30,7 @@ void optimize() {
     int profit = knapsack(sorted, v.capacity, chosen);
 
     cout << "Max Profit: " << profit << endl;
+    return profit;
 }
 
 int main() {
@@ -59,7 +42,10 @@ int main() {
 
         if(choice==1) loadOrders();
         else if(choice==2) showOrders();
-        else if(choice==3) optimize();
+        else if(choice==3) {
+            int profit = optimize();
+            cout << "Returned Profit: " << profit << endl;
+        }
 
     } while(choice!=4);
 

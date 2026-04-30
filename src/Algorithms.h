@@ -1,13 +1,8 @@
-#ifndef ALGORITHMS_H
-#define ALGORITHMS_H
-
+#pragma once
 #include <vector>
 #include "Order.h"
 
-using namespace std;
+extern std::vector<Order> orders;
 
-vector<Order> selectOrders(vector<Order>& orders);
-int knapsack(vector<Order>& orders, int capacity, vector<Order>& chosen);
-vector<int> dijkstra(int n, vector<vector<pair<int,int>>>& graph, int src);
-
-#endif
+void loadOrders();
+int optimize();

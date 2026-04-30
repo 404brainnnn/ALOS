@@ -5,3 +5,8 @@ app
 .DS_Store
 gui
 src/gui
+
+.DS_Store
+*.o
+*.out
+gui
