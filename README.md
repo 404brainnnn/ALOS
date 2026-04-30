@@ -7,14 +7,14 @@ It focuses on optimizing delivery operations by selecting profitable orders, ass
 
 This project demonstrates the practical application of core Data Structures and Algorithms concepts learned in class.
 
-⸻
+
 
 🎯 Objective
 	•	To maximize delivery profit
 	•	To efficiently utilize vehicle capacity
 	•	To optimize delivery routes using shortest path algorithms
 
-⸻
+
 
 🧠 Algorithms Used
 
@@ -23,21 +23,18 @@ This project demonstrates the practical application of core Data Structures and 
 The Greedy approach is used to prioritize delivery orders based on profit.
 Orders with higher profit are selected first to ensure maximum revenue.
 
-⸻
+
 
 🔹 2. Dynamic Programming (0/1 Knapsack)
 
 The Knapsack algorithm is used to assign selected orders to vehicles while respecting capacity constraints.
 It ensures the best combination of orders is chosen to maximize profit.
 
-⸻
 
 🔹 3. Graph Algorithm (Dijkstra)
 
 Dijkstra’s algorithm is used to calculate the shortest path between locations in the delivery network.
 This helps in minimizing travel cost and time.
-
-⸻
 
 ⚙️ Features
 	•	Load delivery orders from a CSV file
@@ -47,7 +44,6 @@ This helps in minimizing travel cost and time.
 	•	Compute shortest delivery routes using Graph algorithms
 	•	Menu-driven Text User Interface (TUI)
 
-⸻
 
 🏗️ System Design
 	1.	Orders are loaded from orders.csv
@@ -62,7 +58,6 @@ This project successfully demonstrates how multiple algorithmic techniques such 
 
 It provides an efficient and scalable approach for delivery management systems.
 
-⸻
 
 📚 Future Improvements
 	•	Add Graphical User Interface (GUI)
@@ -70,7 +65,7 @@ It provides an efficient and scalable approach for delivery management systems.
 	•	Integrate real-time data input
 	•	Add route visualization
 
-⸻
+
 
 👨‍💻 Technology Used
 	•	Language: C++
