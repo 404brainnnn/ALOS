@@ -1,3 +1,7 @@
 app
 *.dSYM
 .DS_Store
+
+.DS_Store
+gui
+src/gui
